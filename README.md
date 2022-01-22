@@ -1,6 +1,6 @@
 # javascript
 
-## javascript 기본 문법
+javascript 기본 문법
 
 
 
