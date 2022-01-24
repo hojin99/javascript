@@ -22,13 +22,21 @@ console.log(a.length); // 7
 console.log(a[2]); // b
 console.log(a.slice(1,3)); // bc
 console.log(a.slice(1)); // bcdefg
-console.log(a.substr(1,2)); // bc
 console.log(a.toUpperCase()); // ABCDEFG
 
 if(a.indexOf('abc') > -1) {
-    console.log(a.replace('abc','ABC'));
+    console.log(a.replace('abc','ABC')); // ABCdefg
+}
+if(a.includes('abc')) {
+    console.log(a.replace('abc','ABC')); // ABCdefg
 }
 
-if(a.includes('abc')) {
-    console.log(a.replace('abc','ABC'));
-}
+console.log(`
+# 문자열 <-> 배열`);
+
+const csv = '200,123,123,123';
+
+const arr = csv.split(',');
+console.log(arr);
+const str = arr.join('-');
+console.log(str);

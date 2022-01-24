@@ -27,6 +27,14 @@ let b = new User('이순신',30);
 a.show();
 b.show();
 
+// computed property
+let myKey = "name";
+let myObj = {
+    [myKey]:"Tom",
+    age : 49
+}
+console.log(myObj);
+
 console.log(`
 # 객체 복제`);
 
@@ -37,6 +45,16 @@ console.log(c.age); // 10, 참조가 되어서 c의 age도 함께 변경됨
 let d = Object.assign({}, a);
 a.age = 30;
 console.log(d.age); // 10, 복제가 되어서 d의 age는 변경 안됨
+
+// 전개 구문 할당
+let e = {...a};
+a.age = 40;
+console.log(e.age); // 30, 복제가 되어서 e의 age는 변경 안됨
+
+// 구조분해 할당
+const {name:usrName, age} = a;
+console.log(usrName); // 홍길동, 변수명 변경 
+console.log(age); // 40
 
 console.log(`
 # 객체 다루기`);
@@ -58,6 +76,4 @@ Object.values(a).forEach(
 // entry 목록 조회
 console.log(Object.entries(a));
 
-console.log(`
-# 객체 다루기`);
 

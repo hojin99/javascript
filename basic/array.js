@@ -99,3 +99,24 @@ ret = arr2.reduce((prev, cur)=>{
 
 console.log(ret);
 
+
+console.log(`
+# 구조분해 할당`);
+
+let [n1, n2, n3="3"] = ["1", "2"];
+console.log(n1); // "1"
+console.log(n2); // "2"
+console.log(n3); // "3"
+
+[n1, n2] = ["5", "6"];
+
+
+console.log(`
+# 전개 구문`);
+
+let arr3 = [1,2,3];
+let arr4 = [4,5,6];
+let result = [0, ...arr3, ...arr4, 7];
+
+console.log(result);
+
