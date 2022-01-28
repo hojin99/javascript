@@ -1,0 +1,8 @@
+{
+    // 컴파일 옵션
+    "compilerOptions": {},
+    // include, exclude를 이용한 추가
+    "include": [
+      "typescript/**/*"
+    ]
+  }
