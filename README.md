@@ -2,16 +2,6 @@
 
 ## 환경
 
-* typescript 빌드 
-tsconfig.json 작성  
-package.json의 scripts를통해서 빌드  
-`
-  "scripts": {
-    "build": "tsc --build",
-    "clean": "tsc --build --clean"
-  },
-`
-* typescript 실행 환경
 VS Code의 code runner로 typescript 실행을 위해서 ts-node 설치  
 `npm install -g ts-node`
 

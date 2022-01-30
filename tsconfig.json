@@ -3,6 +3,6 @@
     "compilerOptions": {},
     // include, exclude를 이용한 추가
     "include": [
-      "typescript/**/*"
+      "typescript/**/hello.ts"
     ]
   }
