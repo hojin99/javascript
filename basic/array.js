@@ -120,3 +120,33 @@ let result = [0, ...arr3, ...arr4, 7];
 
 console.log(result);
 
+console.log(`
+# 복사 - reference copy, shadow copy, deep copy`);
+
+// 참조 복사
+let array = [1,2,3,4,5];
+let array_copy = array;
+
+array.splice(0,1);
+console.log('reference copy:', array, array_copy); //[ 2, 3, 4, 5 ] [ 2, 3, 4, 5 ]
+
+// Shadow 복사 (spread)
+array = [1,[2,3]];
+array_copy = [...array];
+
+array.push(4); 
+console.log('reference copy1:', array, array_copy);
+
+array[1].push(5); 
+console.log('reference copy2:', array, array_copy);
+
+// Deep 복사
+array = [1,[2,3]];
+array_copy = JSON.parse(JSON.stringify(array));
+
+array.push(4); 
+console.log('deep copy1:', array, array_copy);
+
+array[1].push(5); 
+console.log('deep copy2:', array, array_copy);
+
