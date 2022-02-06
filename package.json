@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc --build",
+    "build stric": "tsc --strict",
     "clean": "tsc --build --clean"
   },
   "repository": {
