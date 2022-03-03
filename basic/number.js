@@ -71,17 +71,4 @@ for(let i =0;i<5;i++) {
     console.log(1+ Math.floor(Math.random() * 10));
 }
 
-console.log(`
-# 국제화`);
 
-// 숫자
-console.log(new Intl.NumberFormat('de-DE').format(value1));
-console.log(new Intl.NumberFormat('zh-Hans-CN-u-nu-hanidec').format(value1));
-console.log(new Intl.NumberFormat('ar-EG').format(value1));
-console.log(new Intl.NumberFormat('en-IN').format(value1));
-
-// 통화
-console.log(new Intl.NumberFormat('de-DE', {style: 'currency', currency: 'JPY'}).format(value1));
-console.log(new Intl.NumberFormat('zh-Hans-CN-u-nu-hanidec', {style: 'currency', currency: 'JPY'}).format(value1));
-console.log(new Intl.NumberFormat('ar-EG', {style: 'currency', currency: 'JPY'}).format(value1));
-console.log(new Intl.NumberFormat('en-IN', {style: 'currency', currency: 'JPY'}).format(value1));
