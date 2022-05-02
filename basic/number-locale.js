@@ -1,16 +1,21 @@
 'use strict';
 
-let value1 = 1234.123456;
-let value2 = -1234.12;
-
 console.log(`
 # 국제화 숫자`);
+
+let value1 = 1234.123456;
+let value2 = -1234.12;
 
 // 숫자
 console.log(new Intl.NumberFormat('de-DE').format(value1));
 console.log(new Intl.NumberFormat('zh-Hans-CN-u-nu-hanidec').format(value1));
 console.log(new Intl.NumberFormat('ar-EG').format(value1));
 console.log(new Intl.NumberFormat('en-IN').format(value1));
+
+console.log(new Intl.NumberFormat('de').format(value1));
+console.log(new Intl.NumberFormat('zh').format(value1));
+console.log(new Intl.NumberFormat('ar').format(value1));
+console.log(new Intl.NumberFormat('en').format(value1));
 
 console.log(`
 # 국제화 숫자 소수점`);
