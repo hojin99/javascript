@@ -130,9 +130,10 @@ let array_copy = array;
 array.splice(0,1);
 console.log('reference copy:', array, array_copy); //[ 2, 3, 4, 5 ] [ 2, 3, 4, 5 ]
 
-// Shadow 복사 (spread)
+// Shadow 복사 (spread, slice)
 array = [1,[2,3]];
-array_copy = [...array];
+// array_copy = [...array];
+array_copy = array.slice();
 
 array.push(4); 
 console.log('reference copy1:', array, array_copy);
@@ -140,9 +141,10 @@ console.log('reference copy1:', array, array_copy);
 array[1].push(5); 
 console.log('reference copy2:', array, array_copy);
 
-// Deep 복사
+// Deep 복사 (JSON.stringfy, _.cloneDeep)
 array = [1,[2,3]];
-array_copy = JSON.parse(JSON.stringify(array));
+// array_copy = JSON.parse(JSON.stringify(array));
+array_copy = _.cloneDeep(array);
 
 array.push(4); 
 console.log('deep copy1:', array, array_copy);
