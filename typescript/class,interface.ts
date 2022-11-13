@@ -14,29 +14,65 @@ const user: User = {
 
 console.log(user);
 
+enum Role {
+    SuperAdmin,
+    GroupAdmin,
+    BackupAdmin
+};
+
+interface Admin extends User {
+    role: Role
+};
+
+const admin: Admin = {
+    name: 'admin',
+    id: 10,
+    role: Role.BackupAdmin
+};
+
+console.log(admin);
+
+
 console.log(`
 # class`);
 
-class UserAccount {
+abstract class AbstractUser implements User {
     name: string;
     id : number;    
+    protected age: number;
 
-    constructor(name:string, id:number) {
+    constructor(name:string, id:number, age:number) {
         this.name = name;
         this.id = id;
+        this.age = age;
+    }
+
+    describe():void {
+        console.log(`user's name is ${this.name}. user's id is ${this.id}. age is ${this.age}.`);
+    }
+
+    abstract delete():void;
+}
+
+class UserAccount extends AbstractUser {
+
+    delete() {
+        console.log(`${this.name} is deleted!`);
     }
 }
 
-function deleteUser(user:User) {
+function deleteUser1(user:User) {
     console.log(`delete ${user.name}...`);
 }
 
-function getUser():User {
-    return user1;
+function deleteUser2(user:AbstractUser) {
+    user.delete();
 }
 
-let user1:User = new UserAccount('hojin',12);
+let user1:UserAccount = new UserAccount('hojin',12, 40);
 
-console.log(getUser());
-deleteUser(user1);
+deleteUser1(user1);
+deleteUser2(user1);
+user1.describe();
 
+// console.log(user1.age); // Property 'age' is protected and only accessible within class 'AbstractUser' and its subclasses.

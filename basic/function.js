@@ -13,6 +13,8 @@ showName('hojin'); // 1 hojin undefined
 showName('hojin','john'); // 2 hojin john
 
 // 나머지 매개변수
+// 전개 연산자는 함수의 인자값을 배열로도 사용할 수 있도록 해줌
+// func.apply(null,array)는 함수에 인자값을 배열로 사용할 수 있도록 해줌
 function add(...num) {
     let ret = 0;
     num.forEach((item)=>{
@@ -22,6 +24,8 @@ function add(...num) {
 }
 add(1,2,3,4);
 add(1,2,3,4,5,6,7,8,9);
+add(...[1,2,3]);
+add.apply(null,[1,2,3]);
 
 function User(name, age, ...skills) {
     this.name = name;
@@ -31,7 +35,7 @@ function User(name, age, ...skills) {
 
 const user1 = new User('John',12,'java','c++');
 const user2 = new User('Tom', 22, 'react', 'vuejs', 'jsp');
-const user3 = new User('Jack', 53);
+const user3 = new User('Jack', 53, ...['react', 'vuejs', 'jsp']);
 console.log(user1);
 console.log(user2);
 console.log(user3);

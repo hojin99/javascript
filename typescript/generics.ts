@@ -1,7 +1,6 @@
 
 console.log(`
-# type (generics)`);
-
+# generics`);
 
 type StringArray = Array<string>;
 type NumberArray = Array<number>;
@@ -12,7 +11,7 @@ let strArr:StringArray = ["a","b"];
 console.log(typeof strArr);
 console.log(strArr);
 
-class User<T> {
+class Animal<T> {
     name:T;
 
     constructor(name:T) {
@@ -28,10 +27,17 @@ class User<T> {
     }
 }
 
-let user1 = new User<string>('Tom');
+let animal1 = new Animal<string>('Tom');
 
-user1.tell();
-user1.changeName('Jane');
-user1.tell();
+animal1.tell();
+animal1.changeName('Jane');
+animal1.tell();
 
-//user1 = new User<number>(10); //typescript/generics.ts(37,1): error TS2322: Type 'User<number>' is not assignable to type 'User<string>'.
+//animal1 = new Animal<number>(10); //typescript/generics.ts(37,1): error TS2322: Type 'User<number>' is not assignable to type 'User<string>'.
+
+let animal2 = new Animal<number>(10);
+
+animal2.tell();
+animal2.changeName(20);
+animal2.tell();
+// animal2.changeName('Jane'); // Argument of type 'string' is not assignable to parameter of type 'number'.

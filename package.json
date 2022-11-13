@@ -4,9 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "tsc --build",
-    "build stric": "tsc --strict",
-    "clean": "tsc --build --clean"
+
   },
   "repository": {
     "type": "git",
@@ -20,5 +18,8 @@
   "homepage": "https://github.com/hojin99/javascript#readme",
   "dependencies": {
     "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.1"
   }
 }
