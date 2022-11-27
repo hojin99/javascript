@@ -12,3 +12,4 @@ let hello:string = "hello";
 console.log(hello);
 console.log(greeter('Tom')); 
 // console.log(greeter(undefined));  // strict 설정 시만 에러
+
